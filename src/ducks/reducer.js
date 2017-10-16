@@ -1,3 +1,4 @@
+// for redux-promise-middleware
 // import { getAllUsers } from '../services/userService';
 
 const initialState = {
