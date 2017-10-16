@@ -37,6 +37,7 @@ export function addUser(user) {
   }
 }
 
+// for redux-promise-middleware
 // export function getUsers() {
 //   return {
 //     type: GET_USERS,
