@@ -18,10 +18,10 @@ export default function reducer(state=initialState, action) {
       let { name, age } = action.payload;
       console.log(Object.assign({}, state, { users: [...state.users, { name, age }] }))
       return Object.assign({}, state, { users: [...state.users, { name, age }] });
-    // This is for redux-promise-middleware
-    // case GET_USERS_PENDING:
+    // // This is for redux-promise-middleware
+    // case GET_USERS_PENDING: // This is fired after the GET_USERS action.type is passed
     //   return state;
-    // case GET_USERS_FULFILLED:
+    // case GET_USERS_FULFILLED: // This is fired once the promise is fulfilled
     //   return Object.assign({}, state, { users: [...state.users].concat(action.payload) })
     default:
       return state;
@@ -39,6 +39,6 @@ export function addUser(user) {
 // export function getUsers() {
 //   return {
 //     type: GET_USERS,
-//     payload: getAllUsers()
+//     payload: getAllUsers() // the payload value should always be a promise. This is the function from the service that is returning a promise already.
 //   }
 // }
